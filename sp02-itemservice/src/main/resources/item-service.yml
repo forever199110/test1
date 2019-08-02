@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: item-service
+---
+spring:
+  profiles: eureka1
+
+server:
+  port: 8001
+eureka:
+  client:
+    availability-zones:
+      defaultZone: http://eureka1:2001/eureka,
+---
+spring:
+  profiles: eureka2
+server:
+  port: 8002
+eureka:
+  client:
+    availability-zones:
+      defaultZone: http://eureka2:2001/eureka
